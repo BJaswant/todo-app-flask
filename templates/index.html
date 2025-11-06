@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glassmorphic To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1><i class="fa-solid fa-pen-to-square"></i> To-Do List</h1>
+
+        <!-- Add Task Form -->
+        <form action="/add" method="POST">
+            <input type="text" name="title" placeholder="Enter new task" required>
+            <button type="submit">Add Task</button>
+        </form>
+
+        <!-- Tasks Table -->
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>Task</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+
+            {% for task in tasks %}
+            <tr>
+                <!-- Display sequential numbering (1, 2, 3...) -->
+                <td>{{ loop.index }}</td>
+                <td>{{ task[1] }}</td>
+                <td>{{ task[2] }}</td>
+
+                <!-- Action buttons -->
+                <td class="actions">
+                    {% if task[2] == 'Pending' %}
+                        <a href="/update/{{ task[0] }}" class="done">
+                            <i class="fa-solid fa-check"></i> Mark Done
+                        </a>
+                    {% else %}
+                        <span class="completed-tag">✅ Done</span>
+                    {% endif %}
+
+                    <a href="/delete/{{ task[0] }}" class="del">
+                        <i class="fa-solid fa-trash"></i> Delete
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>

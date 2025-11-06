@@ -1,0 +1,154 @@
+/* ===== Base Body Styling ===== */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    height: 100vh;
+    background: linear-gradient(135deg, #0a192f, #112240);
+    background-image: url("endless-constellation.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* ===== Container ===== */
+.container {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    width: 700px;
+    padding: 40px;
+    text-align: center;
+    z-index: 1;
+}
+
+/* ===== Heading ===== */
+h1 {
+    font-size: 2.3rem;
+    font-weight: 600;
+    color: #a3c9ff;
+    text-shadow: 0 0 10px rgba(100, 170, 255, 0.5);
+    margin-bottom: 25px;
+}
+
+/* ===== Input Area ===== */
+form {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+input[type="text"] {
+    padding: 12px 15px;
+    width: 60%;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    outline: none;
+}
+
+button {
+    background: rgba(0, 136, 255, 0.6);
+    border: none;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+button:hover {
+    background: rgba(0, 136, 255, 0.8);
+}
+
+/* ===== Table Styling ===== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 14px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+th {
+    color: #a3c9ff;
+    font-weight: 600;
+}
+
+td {
+    color: #e6f1ff;
+}
+
+/* ===== Action Buttons ===== */
+a {
+    text-decoration: none;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    margin: 3px;
+}
+
+a.mark-done {
+    background: rgba(0, 200, 100, 0.4);
+}
+
+a.mark-done:hover {
+    background: rgba(0, 255, 130, 0.6);
+}
+
+a.delete {
+    background: rgba(255, 80, 80, 0.4);
+}
+
+a.delete:hover {
+    background: rgba(255, 100, 100, 0.6);
+}
+
+/* ===== Subtle floating lights (Optional) ===== */
+body::before, body::after {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 0;
+}
+
+body::before {
+    background: rgba(0, 136, 255, 0.3);
+    top: -100px;
+    left: -100px;
+    animation: float1 12s ease-in-out infinite alternate;
+}
+
+body::after {
+    background: rgba(0, 255, 200, 0.25);
+    bottom: -100px;
+    right: -100px;
+    animation: float2 15s ease-in-out infinite alternate;
+}
+
+@keyframes float1 {
+    from { transform: translate(0, 0); }
+    to { transform: translate(60px, 40px); }
+}
+
+@keyframes float2 {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-60px, -40px); }
+}

@@ -91,8 +91,8 @@ Then open your browser and visit:
 ## 🧑‍💻 Author
 
 **Jaswant B**  
-📧 [your.email@example.com]  
-🌐 [GitHub Profile](https://github.com/yourusername)  
+📧 jaswantb134@gmail.com  
+🌐 [GitHub Profile](https://github.com/BJaswant)  
 
 ---
 
